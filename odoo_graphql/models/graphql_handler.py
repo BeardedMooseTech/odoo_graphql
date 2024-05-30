@@ -13,6 +13,7 @@ _logger = logging.getLogger(__name__)
 
 class GraphQLHandler(models.TransientModel):
     _name = "graphql.handler"
+    _description = "GraphQL Handler"
 
     def has_introspection(self):
         introspection = (
@@ -131,7 +132,8 @@ class GraphQLHandler(models.TransientModel):
         # Check if access exists that allow the user to get informations
         model_access = self.env["ir.model.access"]
         model_by_rights = ir_model_ids.filtered(
-            lambda m: model_access.check(m.model, mode=mode, raise_exception=False)
+            lambda m: model_access.check(
+                m.model, mode=mode, raise_exception=False)
         )
 
         # Check if rules exists that may allow the user to get informations
