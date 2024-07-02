@@ -4,3 +4,5 @@
 # from . import archived_relationship
 
 from . import test_queries
+from . import test_fields
+from . import test_filtered_relationship
